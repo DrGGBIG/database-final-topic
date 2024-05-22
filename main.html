@@ -66,7 +66,7 @@
         }
 
         h1 {
-            text-align: center ;
+            text-align: center;
             display: inline-block;
         }
 
@@ -80,7 +80,7 @@
             overflow: auto;
             width: 90%;
             margin: 0 auto;
-            margin-top: 50px; /* Add margin-top to ensure it appears below the introduction section */
+            margin-top: 50px; 
         }
 
         .container {
@@ -101,6 +101,48 @@
             height: 300px;
             margin-left: 20px;
         }
+
+        .info-sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 70%;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .info-section {
+            width: 45%;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-section h2 {
+            margin-top: 0;
+        }
+
+        .faq-container {
+            width: 90%;
+            margin: 20px auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+
+        .answer {
+            display: none;
+            padding: 10px 0;
+        }
+
+        .question {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -118,6 +160,56 @@
             感謝大家的支持和關注，我期待與各位在未來共同努力，推動資訊工程的發展和創新。
         </div>
         <img src="/img/professor.jpg" alt="professor" class="profile-img">
+    </div>
+
+    <div class="info-sections">
+        <div class="info-section">
+            <h2>學歷</h2>
+            <ul>
+                <li>中正大學 資訊工程學系 博士</li>
+                <li>中正大學 資訊工程學系 學士</li>
+            </ul>
+        </div>
+        <div class="info-section">
+            <h2>專長</h2>
+            <ul>
+                <li>無線通訊</li>
+                <li>Wireless Communications</li>
+                <li>資訊安全</li>
+                <li>Information Security</li>
+                <li>電子商務</li>
+                <li>E-Commerce</li>
+                <li>密碼學</li>
+                <li>Cryptography</li>
+                <li>數位影像處理</li>
+                <li>Image Processing</li>
+                <li>區塊鏈技術與應用</li>
+                <li>Blockchain technique and its application</li>
+            </ul>
+        </div>
+        <div class="info-section">
+            <h2>校內經歷</h2>
+            <ul>
+                <li>校務企劃組 組長</li>
+                <li>系統維運組 組長</li>
+                <li>資源管理中心 主任</li>
+                <li>資訊工程學系 副教授</li>
+                <li>資訊工程學系 助理教授</li>
+                <li>資訊工程學系 教授</li>
+                <li>資訊工程學系 特聘教授</li>
+                <li>資訊工程學系 系主任</li>
+                <li>資訊教學中心 主任</li>
+                <li>資通安全研究中心 主任</li>
+                <li>資通安全研究中心 副主任</li>
+                <li>逢甲大學帆宣智慧城市5G實驗室 研究員</li>
+            </ul>
+        </div>
+        <div class="info-section">
+            <h2>校外經歷</h2>
+            <ul>
+                <li>無</li>
+            </ul>
+        </div>
     </div>
 
     <div id="schedule-container" class="hidden">
@@ -244,9 +336,22 @@
                         <td class="slot"><div class="red-dot"></div></td>
                         <td class="slot"><div class="red-dot"></div></td>
                     </tr>
+                    <!-- 可以繼續添加時間段 -->
                 </tbody>
             </table>
         </div>
+    </div>
+
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="question">問題1</div>
+            <div class="answer">這是答案1。</div>
+        </div>
+        <div class="faq-item">
+            <div class="question">問題2</div>
+            <div class="answer">這是答案2。</div>
+        </div>
+        <!-- 更多的問答項目 -->
     </div>
 
     <script>
@@ -257,6 +362,13 @@
         document.querySelectorAll('.slot').forEach(function(slot) {
             slot.addEventListener('click', function() {
                 slot.classList.toggle('active');
+            });
+        });
+
+        document.querySelectorAll('.question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
             });
         });
     </script>
